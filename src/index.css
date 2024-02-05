@@ -21,7 +21,7 @@ body, html, #root{
 }
 
 .general-padding{
-  @apply px-10
+  @apply xlaptop:px-10 md:px-7 px-5
 }
 
 .bg-base{
@@ -29,11 +29,11 @@ body, html, #root{
 }
 
 .section-heading{
-  @apply text-3xl font-bold mb-3
+  @apply xxmd:text-3xl text-2xl font-bold mb-3
 }
 
 .card-heading{
-  @apply text-xl font-bold
+  @apply xmd:text-xl text-lg font-bold
 }
 
 .bg-pale-sky{

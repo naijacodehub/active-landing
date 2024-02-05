@@ -6,42 +6,46 @@ import {
   FaLinkedin,
   FaTwitter,
 } from 'react-icons/fa';
+import { scrollToSectionWithOffset } from '../../helpers/scrollHelper';
 
 export default function Footer() {
   return (
-    <div className='general-padding bg-dark dark:bg-secondary/10 text-white py-28'>
-      <div className='flex space-x-8 max-w-[70rem] mx-auto'>
+    <div className='general-padding bg-dark dark:bg-secondary/10 text-white py-20 md:py-28'>
+      <div className='flex max-xxmd:flex-col max-xxmd:space-y-10 md:space-x-8 max-w-[70rem] mx-auto'>
         <div className='flex-1'>
           <img
             src={'/Images/darkLogo.png'}
             alt='Active Tech Logo'
-            className='w-56'
+            className='w-40 md:w-56'
           />
         </div>
 
         <div className='grid flex-1'>
-          <div className='text-lg'>
+          <div className='md:text-lg'>
             4969 Millbrook <br /> RoadElmhurst, IL 60126
           </div>
 
-          <div className='mt-20 grid gap-5 text-sm'>
+          <div className='mt-14 md:mt-20 grid gap-5 text-sm'>
             <div>+1 630-816-0205</div>
             <div>Support@activetech.com</div>
           </div>
         </div>
 
         <div className='grid flex-1'>
-          <div className='grid grid-cols-2 gap-4 text-sm'>
+          <div className='grid grid-cols-2 gap-y-4 xxmd:gap-4 text-sm max-xxmd:max-w-[20rem]'>
             {navLinks.slice(0, -1).map((link, idx) => {
               return (
-                <Link key={idx} to={'/'}>
+                <div
+                  key={idx}
+                  onClick={() => scrollToSectionWithOffset(link.selector)}
+                >
                   {link.label}
-                </Link>
+                </div>
               );
             })}
           </div>
 
-          <div className='mt-20 grid gap-5 text-sm'>
+          <div className='mt-14 md:mt-20 grid gap-5 text-sm'>
             <div className='flex space-x-4 text-xl'>
               <Link to={'/'}>
                 <FaFacebookF />

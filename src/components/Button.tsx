@@ -26,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
 
   useEffect(() => {
     setActiveVariant(variants[variant]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [variant]);
 
   return (

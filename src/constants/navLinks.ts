@@ -1,22 +1,22 @@
 export const navLinks = [
   {
     label: 'Why Choose Us',
-    selector: '',
+    selector: 'why-choose-us-section',
   },
   {
     label: 'Services',
-    selector: '',
+    selector: 'services-section',
   },
   {
     label: 'The Team',
-    selector: '',
+    selector: 'team-section',
   },
   {
     label: 'Clients',
-    selector: '',
+    selector: 'clients-section',
   },
   {
     label: 'Vision to shipping',
-    selector: '',
+    selector: 'agile-process-section',
   },
 ];

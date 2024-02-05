@@ -16,11 +16,11 @@ module.exports = {
 			screens: {
 				xxmobile: '361px',
 				xmobile: '390px',
-				mobile: '480px',
+				mobile: '490px',
 				lgMobile: '560px',
 				xmd: '660px',
 				xxmd: '690px',
-				md: '830px',
+				md: '840px',
 				smLaptop: '920px',
 				laptop: '1024px',
 				xlaptop: '1070px',

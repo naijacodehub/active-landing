@@ -1,4 +1,4 @@
-import Button from '../Button';
+import Button from '../formComponents/Button';
 
 export default function MeetOurTeamSection() {
   return (

@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import useDimension from '../../hooks/useDimension';
-import Button from '../Button';
+import Button from '../formComponents/Button';
 
 export default function HeroSection() {
   const { width } = useDimension();
@@ -25,12 +26,17 @@ export default function HeroSection() {
           </p>
 
           <div className='mt-8 laptop:mt-6 flex max-mobile:flex-col max-mobile:space-y-4 max-mobile:max-w-[12rem] max-laptop:justify-center mobile:space-x-5 mb-10'>
-            <Button className='h-12 !px-3 mobile:!px-7 text-base'>
-              Hire A Talent Now
-            </Button>
-            <Button variant='link' className='text-base'>
-              Outsource Project
-            </Button>
+            <Link to={'/hire-a-talent'}>
+              <Button className='h-12 !px-3 mobile:!px-7 text-base'>
+                Hire A Talent Now
+              </Button>
+            </Link>
+
+            <Link to={'/outsource-project'}>
+              <Button variant='link' className='text-base'>
+                Outsource Project
+              </Button>
+            </Link>
           </div>
         </div>
 

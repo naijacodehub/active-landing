@@ -1,10 +1,11 @@
 import { navLinks } from '../../constants/navLinks';
-import Button from '../Button';
+import Button from '../formComponents/Button';
 import { IoCloseOutline, IoMoonOutline, IoSunnyOutline } from 'react-icons/io5';
 import { useTheme } from '../../context/theme-provider';
 import { CiMenuFries } from 'react-icons/ci';
 import { useState } from 'react';
 import { scrollToSectionWithOffset } from '../../helpers/scrollHelper';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
@@ -28,7 +29,7 @@ export default function Navbar() {
             <div
               onClick={() => scrollToSectionWithOffset(link.selector)}
               key={idx}
-              className='whitespace-nowrap'
+              className='whitespace-nowrap cursor-pointer'
             >
               {link.label}
             </div>
@@ -57,9 +58,11 @@ export default function Navbar() {
           <CiMenuFries className='text-2xl' />
         </Button>
 
-        <Button className='hidden md:block max-smLaptop:h-8'>
-          Hire A Talent
-        </Button>
+        <Link to={'/hire-a-talent'}>
+          <Button className='hidden md:block max-smLaptop:h-8'>
+            Hire A Talent
+          </Button>
+        </Link>
       </div>
 
       <MobileNav

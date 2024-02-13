@@ -1,4 +1,5 @@
-import Button from '../Button';
+import { Link } from 'react-router-dom';
+import Button from '../formComponents/Button';
 
 export default function ElevateProjects() {
   return (
@@ -22,9 +23,11 @@ export default function ElevateProjects() {
             together. Your next project deserves the best!
           </div>
 
-          <Button className='mt-6 mx-auto lgMobile:!text-base h-12 px-5 lgMobile:px-8 font-bold'>
-            Hire A Talent Now
-          </Button>
+          <Link className='mt-6' to={'/hire-a-talent'}>
+            <Button className=' mx-auto lgMobile:!text-base h-12 px-5 lgMobile:px-8 font-bold'>
+              Hire A Talent Now
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

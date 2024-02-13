@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Button from './Button';
+import Button from './formComponents/Button';
 import { FiArrowUp } from 'react-icons/fi';
 
 const ScrollToTopButton: React.FC = () => {

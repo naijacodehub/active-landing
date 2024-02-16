@@ -29,15 +29,18 @@ export default function useHireTalent(data: HireTalentFormData) {
     });
 
     try {
-      await fetch(formUrl, {
+      const res = await fetch(formUrl, {
         method: 'POST',
         mode: 'no-cors',
         body: params,
       });
-      // Assume success
+
+      console.log(res.status);
+
       console.log('Form submitted successfully');
-      // Handle success (e.g., show a message, redirect, etc.)
     } catch (error) {
+      console.log(error);
+
       console.error('Error submitting form', error);
       // Handle error
     } finally {

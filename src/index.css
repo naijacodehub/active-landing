@@ -22,7 +22,7 @@ body, html, #root{
 }
 
 .general-padding{
-  @apply xlaptop:px-10 md:px-7 px-5
+  @apply xlaptop:px-10 md:px-7 xxmobile:px-5 px-3
 }
 
 .bg-base{

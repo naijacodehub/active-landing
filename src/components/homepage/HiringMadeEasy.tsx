@@ -13,7 +13,10 @@ export default function HiringMadeEasySection() {
       <div className='mt-20 smLaptop:mt-28 gap-y-10 lgMobile:gap-y-16 md:gap-0 grid grid-cols-1 lgMobile:grid-cols-2 md:grid-cols-4'>
         {hiringMadeEasy.map((item, idx) => {
           return (
-            <div className='p-2 max-lgMobile:max-w-[20rem] max-lgMobile:mx-auto laptop:p-5 lgMobile:border-t dark:border-pale-sky/50 border-dashed relative text-center'>
+            <div
+              key={idx}
+              className='p-2 max-lgMobile:max-w-[20rem] max-lgMobile:mx-auto laptop:p-5 lgMobile:border-t dark:border-pale-sky/50 border-dashed relative text-center'
+            >
               <img
                 src='/Images/normalOverlay.png'
                 alt='Active Tech Vector'

@@ -43,7 +43,15 @@ export default function HireTalentForm() {
   const { handleSubmit, loading } = useHireTalent(form.getValues());
 
   function onSubmit() {
-    handleSubmit();
+    handleSubmit().then(() => {
+      // Reset the form fields to initial values
+      form.reset();
+      form.setValue('projectBudgetMax', 0);
+      form.setValue('projectBudgetMin', 0);
+      // Clear selected tech stacks and roles
+      setSelectedTechStacks(new Set());
+      setSelectedRoles(new Set());
+    });
   }
 
   const [selectedTechStacks, setSelectedTechStacks] = useState<Set<string>>(
@@ -90,7 +98,7 @@ export default function HireTalentForm() {
     <div className='max-w-[43rem] mx-auto'>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-          <div className='grid grid-cols-2 gap-y-8 gap-x-5'>
+          <div className='grid grid-cols-1 xmobile:grid-cols-2 gap-6 xmobile:gap-y-5 xmobile:gap-x-4 mobile:gap-y-8 mobile:gap-x-5'>
             <FormField
               control={form.control}
               name='name'
@@ -162,14 +170,16 @@ export default function HireTalentForm() {
                     className='h-10 w-full  !px-2 text-left justify-start bg-pale-sky focus:ring-1 focus:ring-primary focus:ring-offset-1 dark:border-gray-500 dark:bg-secondary/10'
                   >
                     {selectedRoles.size > 0 ? (
-                      <div className='flex justify-between space-x-4 w-full'>
+                      <div className='flex justify-between space-x-4 w-full '>
                         {selectedRoles.size < 3 && (
-                          <div>{Array.from(selectedRoles).join(', ')}</div>
+                          <div className=' single-line-text-truncate'>
+                            {Array.from(selectedRoles).join(', ')}
+                          </div>
                         )}
                         {selectedRoles.size >= 3 && (
                           <div>{selectedRoles.size} selected roles</div>
                         )}
-                        <ChevronDown className='h-4 w-4' />
+                        <ChevronDown className='h-4 w-4 whitespace-nowrap' />
                       </div>
                     ) : (
                       <div className='!text-slate-500 w-full !dark:text-slate-400 flex justify-between space-x-4'>
@@ -220,7 +230,7 @@ export default function HireTalentForm() {
                           <CommandSeparator />
                           <CommandGroup>
                             <CommandItem
-                              // onSelect={() => column?.setFilterValue(undefined)}
+                              onSelect={() => setSelectedRoles(new Set())}
                               className='justify-center text-center'
                             >
                               Clear selections
@@ -249,7 +259,9 @@ export default function HireTalentForm() {
                     {selectedTechStacks.size > 0 ? (
                       <div className='flex justify-between space-x-4 w-full'>
                         {selectedTechStacks.size < 3 && (
-                          <div>{Array.from(selectedTechStacks).join(', ')}</div>
+                          <div className=' single-line-text-truncate'>
+                            {Array.from(selectedTechStacks).join(', ')}
+                          </div>
                         )}
                         {selectedTechStacks.size >= 3 && (
                           <div>{selectedTechStacks.size} selected stacks</div>
@@ -305,7 +317,7 @@ export default function HireTalentForm() {
                           <CommandSeparator />
                           <CommandGroup>
                             <CommandItem
-                              // onSelect={() => column?.setFilterValue(undefined)}
+                              onSelect={() => setSelectedTechStacks(new Set())}
                               className='justify-center text-center'
                             >
                               Clear selections
@@ -324,9 +336,9 @@ export default function HireTalentForm() {
               )}
             </div>
 
-            <div className='col-span-2'>
+            <div className='xmobile:col-span-2'>
               <FormLabel>Project Budget</FormLabel>
-              <div className='mt-4 flex items-center justify-between space-x-5'>
+              <div className='mt-4 flex items-center justify-between space-x-3 lgMobile:space-x-5'>
                 <div className='flex-1'>
                   <FormField
                     control={form.control}
@@ -349,7 +361,7 @@ export default function HireTalentForm() {
                   />
                 </div>
 
-                <hr className='w-10 border dark:border-gray-500' />
+                <hr className='w-6 lgMobile:w-10 border dark:border-gray-500' />
 
                 <div className='flex-1'>
                   <FormField
@@ -374,7 +386,7 @@ export default function HireTalentForm() {
               </div>
             </div>
 
-            <div className='col-span-2'>
+            <div className='xmobile:col-span-2'>
               <FormField
                 control={form.control}
                 name='jobDescription'
@@ -395,7 +407,7 @@ export default function HireTalentForm() {
               />
             </div>
           </div>
-          <div className='flex justify-end'>
+          <div className='flex justify-center laptop:justify-end'>
             <Button loading={loading} className='px-8 h-10' type='submit'>
               Submit
             </Button>

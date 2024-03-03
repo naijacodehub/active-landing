@@ -66,44 +66,56 @@ export const agileProcesses = [
     title: 'Requirement Phase',
     desc: [
       'We start by collaboratively defining project requirements through user stories and maintaining a prioritized product backlog.',
-      'Regular interactions with users and stakeholders help us gather valuable insights and refine priorities.',
     ],
+    containerStyle: '-top-6 smLaptop:-top-10 left-1/2 -translate-x-1/2',
+    iconStyle:
+      'absolute top-1/2 -translate-y-1/2 smLaptop:translate-y-[10%] desktop:-translate-y-[30%] left-0',
   },
   {
     title: 'Design Phase',
     desc: [
       'Our design process is incremental, aligning with the prioritized backlog.',
-      'Cross-functional teams collaborate closely to ensure that design decisions meet both user needs and technical requirements.',
     ],
+    containerStyle:
+      'top-[25%] -translate-y-[25%] right-0 bg-base py-4 translate-x-1/2',
+    iconStyle: ' top-0 left-1/2 -translate-x-1/2 rotate-90',
   },
   {
     title: 'Development Phase',
     desc: [
       'We employ iterative development, breaking down the project into short sprints that result in a potentially shippable product increment.',
-      'Our cross-functional teams consist of members proficient in various aspects of development, fostering collaboration and efficiency.',
     ],
+    containerStyle:
+      'bottom-[25%] translate-y-[10%] right-0 bg-base py-4 translate-x-1/2',
+    iconStyle: 'top-0 left-1/2 -translate-x-1/2 rotate-90',
   },
   {
     title: 'Testing Phase',
     desc: [
       'Automated testing is prioritized throughout development to maintain code quality.',
-      'Continuous testing ensures that issues are identified and addressed early in the process, reducing the risk of defects.',
     ],
+    containerStyle:
+      'bottom-6 smLaptop:bottom-10 translate-y-full left-1/2 -translate-x-1/2',
+    iconStyle:
+      'top-1/2 -translate-y-1/2 smLaptop:translate-y-[10%] desktop:-translate-y-[30%] right-0 rotate-180',
   },
   {
     title: 'Deployment Phase',
     desc: [
       'We strive for continuous deployment, allowing us to release features independently and respond quickly to changing requirements.',
-      'Feature toggles and rolling deployment strategies help us minimize impact and maintain a reliable release process.',
     ],
+    containerStyle:
+      'bottom-[25%] translate-y-[10%] left-0 bg-base py-4 -translate-x-1/2',
+    iconStyle: 'bottom-0 left-1/2 -translate-x-1/2 -rotate-90',
   },
   {
     title: 'Release Phase',
     desc: [
       'Release planning is based on feature completion and user feedback.',
-      'We maintain a constant feedback loop, collecting insights during and after each release to inform our continuous improvement efforts.',
-      'Retrospectives are conducted to reflect on our processes, celebrate successes, and identify areas for enhancement.',
     ],
+    containerStyle:
+      'top-[25%] -translate-y-[25%] left-0 bg-base py-4 -translate-x-1/2',
+    iconStyle: 'bottom-0 left-1/2 -translate-x-1/2 -rotate-90',
   },
 ];
 

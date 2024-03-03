@@ -60,16 +60,17 @@ export default function HeroSection() {
             alt='Active Tech Customers/Business'
             className='w-20 xmd:w-28 md:w-36 bg-dark dark:bg-transparent'
           />
-          {[...Array(2)].map((_, idx) => {
-            return (
-              <img
-                key={idx}
-                src='/Images/company.png'
-                alt='Active Tech Customers/Business'
-                className='w-20 xmd:w-28 md:w-36'
-              />
-            );
-          })}
+          <img
+            src='/Images/companies/ilerah_logo.png'
+            alt='Active Tech Customers/Business'
+            className='w-20 xmd:w-28 md:w-36  dark:bg-transparent'
+          />
+
+          <img
+            src='/Images/company.png'
+            alt='Active Tech Customers/Business'
+            className='w-20 xmd:w-28 md:w-36'
+          />
         </div>
       </div>
     </div>

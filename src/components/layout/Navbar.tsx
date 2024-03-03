@@ -69,7 +69,7 @@ export default function Navbar() {
         <Button
           onClick={() => setOpenMenu(!openMenu)}
           variant='ghost'
-          className='!px-0 max-smLaptop:h-8 md:hidden block'
+          className='!px-2 max-smLaptop:h-8 md:hidden block'
         >
           <CiMenuFries className='text-2xl' />
         </Button>

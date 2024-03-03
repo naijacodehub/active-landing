@@ -1,4 +1,9 @@
+import { Link } from 'react-router-dom';
 import Button from '../formComponents/Button';
+import MemberCard from '../MemberCard';
+import { membersList } from '../../constants/member';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 
 export default function MeetOurTeamSection() {
   return (
@@ -18,28 +23,26 @@ export default function MeetOurTeamSection() {
 
       <div className='mt-12 md:flex grid grid-cols-1  w-full items-center gap-8 md:gap-2 laptop:gap-4 max-w-[70rem] mx-auto'>
         <div className='flex overflow-x-scroll xmd:grid xmd:grid-cols-3 gap-2 laptop:gap-4 flex-1 max-xmd:px-1'>
-          {[...Array(3)].map((_, idx) => {
-            return (
-              <div
-                key={idx}
-                className='rounded-2xl w-full max-xmd:min-w-[13rem] bg-grey dark:bg-secondary/10 px-3 py-4 h-full xmd:h-fit'
-              >
-                <div className='h-[120px] xlaptop:h-[150px] w-[120px] xlaptop:w-[150px] mx-auto rounded-xl my-7 bg-gray-300 rotate-45'></div>
-
-                <div className='mt-12'>
-                  <div className='md:text-lg font-semibold'>
-                    Nelda S. Carter
-                  </div>
-                  <div className='max-laptop:text-sm my-2 opacity-50'>
-                    Expertise
-                  </div>
-                  <div className='max-laptop:text-sm'>
-                    DevOps | JavaScript | Git | Node.js
-                  </div>
-                </div>
-              </div>
-            );
+          {membersList.slice(0, 3).map((member, idx) => {
+            return <MemberCard member={member} key={idx} />;
           })}
+
+          <div className='rounded-2xl w-full max-xmd:min-w-[13rem] bg-grey dark:bg-secondary/10 px-3 py-4 h-full xmd:h-fit'>
+            <div className='h-[110px] xlaptop:h-[140px] w-[110px] xlaptop:w-[140px] mx-auto rounded-xl my-7 bg-gray-300 rotate-45'></div>
+
+            <div className='mt-12'>
+              <div className='md:text-lg font-semibold'>Nelda S. Carter</div>
+              <div className='max-laptop:text-sm my-2 opacity-50'>
+                Expertise
+              </div>
+              <div className='text-sm'>DevOps | JavaScript | Git | Node.js</div>
+            </div>
+            <div className='flex space-x-5 items-center mt-3'>
+              <FaGithub className='text-2xl cursor-pointer' />
+              <SiGmail className='text-2xl cursor-pointer' />
+              <FaLinkedin className='text-2xl cursor-pointer' />
+            </div>
+          </div>
         </div>
 
         <div className='bg-black dark:bg-gray-400 rounded-2xl p-5 flex flex-col text-center items-center justify-center w-full mx-auto max-w-[30rem] md:max-w-[15rem] laptop:max-w-[20rem]'>
@@ -50,7 +53,9 @@ export default function MeetOurTeamSection() {
             Your Project
           </p>
 
-          <Button className='mt-4 font-bold'>View Members</Button>
+          <Link to={'/members'}>
+            <Button className='mt-4 font-bold'>View Members</Button>
+          </Link>
         </div>
       </div>
     </div>

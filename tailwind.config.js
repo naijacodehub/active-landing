@@ -26,7 +26,7 @@ module.exports = {
 				xlaptop: '1070px',
 				desktop: '1230px',
 				lgDesktop: '1330px',
-				xDesktop: '1400px',
+				xDesktop: '1500px',
 				extraLarge: '2000px',
 			},
       keyframes: {

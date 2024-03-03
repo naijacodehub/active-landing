@@ -22,12 +22,12 @@ export default function Footer() {
 
         <div className='grid flex-1'>
           <div className='md:text-lg'>
-            4969 Millbrook <br /> RoadElmhurst, IL 60126
+            No. 90A, Nelson Mandela Street. <br /> Asokoro, Abuja
           </div>
 
-          <div className='mt-14 md:mt-20 grid gap-5 text-sm'>
-            <div>+1 630-816-0205</div>
-            <div>Support@activetech.com</div>
+          <div className='mt-14 md:mt-20 grid gap-5 text-[15px]'>
+            <div>+2348143795632</div>
+            <div>ayuba@activetechnologies.org</div>
           </div>
         </div>
 
@@ -37,6 +37,7 @@ export default function Footer() {
               return (
                 <div
                   key={idx}
+                  className='cursor-pointer'
                   onClick={() => scrollToSectionWithOffset(link.selector)}
                 >
                   {link.label}

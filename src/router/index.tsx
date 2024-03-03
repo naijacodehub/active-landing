@@ -4,6 +4,7 @@ import Homepage from '../pages/Homepage';
 import GeneralLayout from '../components/layout/GeneralLayout';
 import HireATalentPage from '../pages/HireTalent';
 import OutsourceProjectPage from '../pages/OutsourceProject';
+import MembersPage from '../pages/Members';
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: '/hire-a-talent',
         element: <HireATalentPage />,
+      },
+      {
+        path: '/members',
+        element: <MembersPage />,
       },
       {
         path: '/outsource-project',

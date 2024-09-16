@@ -28,7 +28,7 @@ export const membersList: MemberProps[] = [
   {
     name: "Jean Pratt",
     role: "Software Engineer",
-    imageUrl: "jean.jpeg",
+    imageUrl: "jean.jpg",
     skills: ["React", "Redux", "GraphQL", "AWS Amplify"],
   },
   {

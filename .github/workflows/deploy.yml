@@ -24,14 +24,21 @@ jobs:
       - name: Build project
         run: CI=false npm run build
 
-      - name: Deploy via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Clean remote directory
+        uses: appleboy/ssh-action@v0.1.7
         with:
-          server: ${{ secrets.SFTP_HOST }}
+          host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: ${{ secrets.SFTP_PORT }}
-          protocol: sftp
-          local-dir: build
-          server-dir: ${{ secrets.SFTP_REMOTE_DIR }}
-          dangerous-clean-slate: true
+          script: rm -rf ${{ secrets.SFTP_REMOTE_DIR }}/*
+
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }}
+          source: "build/*"
+          target: ${{ secrets.SFTP_REMOTE_DIR }}

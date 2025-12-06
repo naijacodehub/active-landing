@@ -1,87 +1,204 @@
-import { Link } from 'react-router-dom';
-import { navLinks } from '../../constants/navLinks';
+import { Link } from "react-router-dom";
+import { navLinks } from "../../constants/navLinks";
 import {
   FaFacebookF,
   FaInstagramSquare,
   FaLinkedin,
   FaTwitter,
-} from 'react-icons/fa';
-import { scrollToSectionWithOffset } from '../../helpers/scrollHelper';
+} from "react-icons/fa";
+import { scrollToSectionWithOffset } from "../../helpers/scrollHelper";
 
 const addresses = [
-  'No. 90A, Nelson Mandela Street. Asokoro, Abuja',
-  'No. 26 Denewell Avenue, Manchester - UK',
+  {
+    label: "Abuja Office",
+    address: "No. 90A, Nelson Mandela Street. Asokoro, Abuja",
+  },
+  {
+    label: "UK Office",
+    address: "No. 26 Denewell Avenue, Manchester - UK",
+  },
 ];
 
-const contacts = ['+2348143795632', '+44 7397 194713', 'ayuba@activetechnologies.org'];
+const contacts = [
+  { type: "phone", value: "+2348143795632", label: "Call us (Nigeria)" },
+  { type: "phone", value: "+44 7397 194713", label: "Call us (UK)" },
+  { type: "email", value: "info@activetechnologies.com", label: "Email us" },
+];
 
 const socialLinks = [
-  { label: 'Facebook', icon: FaFacebookF, to: '/' },
-  { label: 'Twitter', icon: FaTwitter, to: '/' },
-  { label: 'LinkedIn', icon: FaLinkedin, to: '/' },
-  { label: 'Instagram', icon: FaInstagramSquare, to: '/' },
+  {
+    label: "Facebook",
+    icon: FaFacebookF,
+    to: "https://facebook.com/activetechnologies",
+  },
+  {
+    label: "Twitter",
+    icon: FaTwitter,
+    to: "https://twitter.com/activetechnologies",
+  },
+  {
+    label: "LinkedIn",
+    icon: FaLinkedin,
+    to: "https://linkedin.com/company/activetechnologies",
+  },
+  {
+    label: "Instagram",
+    icon: FaInstagramSquare,
+    to: "https://instagram.com/activetechnologies",
+  },
+];
+
+const quickLinks = [
+  { label: "Home", to: "/" },
+  { label: "Hire Talent", to: "/hire-a-talent" },
+  { label: "Outsource Project", to: "/outsource-project" },
+  { label: "Our Team", to: "/members" },
+];
+
+const services = [
+  "Software Development",
+  "Product Management",
+  "UI/UX Design",
+  "Project Management",
+  "Team Augmentation",
 ];
 
 export default function Footer() {
   return (
-    <div className='general-padding bg-dark dark:bg-secondary/10 text-white py-20 md:py-28'>
-      <div className='flex max-xxmd:flex-col max-xxmd:space-y-10 md:space-x-8 max-w-[70rem] mx-auto'>
-        <div className='flex-1'>
-          <img
-            src={'/Images/darkLogo.png'}
-            alt='Active Tech Logo'
-            className='w-40 md:w-56'
-          />
-        </div>
-
-        <div className='grid flex-1'>
-          <div className='md:text-lg space-y-2'>
-            {addresses.map((address, idx) => (
-              <div key={idx} className='leading-relaxed'>
-                {address}
-              </div>
-            ))}
-          </div>
-
-          <div className='mt-14 md:mt-20 grid gap-5 text-[15px]'>
-            {contacts.map((contact, idx) => (
-              <div key={idx}>{contact}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className='grid flex-1'>
-          <div className='grid grid-cols-2 gap-y-4 xxmd:gap-4 text-sm max-xxmd:max-w-[20rem]'>
-            {navLinks.slice(0, -1).map((link, idx) => {
-              return (
-                <div
-                  key={idx}
-                  className='cursor-pointer'
-                  onClick={() => scrollToSectionWithOffset(link.selector)}
-                >
-                  {link.label}
-                </div>
-              );
-            })}
-          </div>
-
-          <div className='mt-14 md:mt-20 grid gap-5 text-sm'>
-            <div className='flex space-x-4 text-xl'>
-              {socialLinks.map((social, idx) => {
-                const Icon = social.icon;
-                return (
-                  <Link key={idx} to={social.to} aria-label={social.label}>
-                    <Icon />
-                  </Link>
-                );
-              })}
+    <footer className="bg-dark dark:bg-secondary/10 text-white">
+      {/* Main Footer Content */}
+      <div className="general-padding py-16 md:py-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+            {/* Brand Section */}
+            <div className="lg:col-span-1">
+              <Link to="/" className="inline-block mb-4">
+                <img
+                  src={"/Images/darkLogo.png"}
+                  alt="Active Technologies - Software Engineers Nigeria"
+                  className="w-40 hover:opacity-80 transition-opacity"
+                />
+              </Link>
+              <p className="text-sm text-gray-400 leading-relaxed mt-4">
+                Connecting you with expert software engineers and tech talent
+                across Africa and beyond.
+              </p>
             </div>
+
+            {/* Quick Links */}
             <div>
-              © {new Date().getFullYear()} Active Tech. All rights reserved.
+              <h3 className="font-bold text-lg mb-6 text-primary">
+                Quick Links
+              </h3>
+              <nav className="space-y-3">
+                {quickLinks.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    to={link.to}
+                    className="text-gray-400 hover:text-white transition-colors text-sm block"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="font-bold text-lg mb-6 text-primary">Services</h3>
+              <ul className="space-y-3">
+                {services.map((service, idx) => (
+                  <li key={idx} className="text-gray-400 text-sm">
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h3 className="font-bold text-lg mb-6 text-primary">Contact</h3>
+              <div className="space-y-4">
+                {addresses.map((addr, idx) => (
+                  <div key={idx}>
+                    <p className="text-xs font-semibold text-primary mb-1">
+                      {addr.label}
+                    </p>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {addr.address}
+                    </p>
+                  </div>
+                ))}
+                <div className="pt-4 space-y-2">
+                  {contacts.map((contact, idx) => (
+                    <a
+                      key={idx}
+                      href={
+                        contact.type === "email"
+                          ? `mailto:${contact.value}`
+                          : `tel:${contact.value}`
+                      }
+                      className="text-gray-400 hover:text-white transition-colors text-sm block"
+                      aria-label={contact.label}
+                    >
+                      {contact.value}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-gray-700 my-12"></div>
+
+          {/* Bottom Section */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            {/* Copyright */}
+            <div className="text-gray-400 text-sm">
+              <p>
+                © {new Date().getFullYear()} Active Technologies. All rights
+                reserved.
+              </p>
+              <p className="text-xs mt-2">
+                Building tomorrow's solutions, today.
+              </p>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-6">
+              <p className="text-sm font-medium text-gray-400">Follow Us:</p>
+              <div className="flex space-x-4">
+                {socialLinks.map((social, idx) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={idx}
+                      href={social.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Follow us on ${social.label}`}
+                      className="text-gray-400 hover:text-primary transition-colors text-xl"
+                    >
+                      <Icon />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex gap-4 text-sm text-gray-400">
+              <a href="#privacy" className="hover:text-white transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#terms" className="hover:text-white transition-colors">
+                Terms & Conditions
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

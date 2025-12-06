@@ -1,21 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 
-import './index.css';
+import "./index.css";
 
-import reportWebVitals from './reportWebVitals';
-import { RouterProvider } from 'react-router-dom';
-import { router } from './router';
-import { ThemeProvider } from './context/theme-provider';
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
+import { ThemeProvider } from "./context/theme-provider";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider defaultTheme='dark'>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <HelmetProvider>
+      <ThemeProvider defaultTheme="dark">
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
 

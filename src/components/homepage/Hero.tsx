@@ -68,11 +68,11 @@ export default function HeroSection() {
 
           <div className="flex items-center gap-2">
             <img
-              src="/Images/companies/eduvacity.png"
+              src="/Images/companies/logo.webp"
               alt="Eduvacity logo"
-              className="w-20 xmd:w-28 md:w-36"
+              className="w-3 xmd:w-4 md:w-5"
             />
-            <span className="text-sm md:text-base font-semibold">Eduvacity</span>
+            <span className="text-sm md:text-base font-semibold">Livemore</span>
           </div>
         </div>
       </div>

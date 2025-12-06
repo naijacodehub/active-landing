@@ -21,16 +21,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project without CI warnings
+      - name: Build project
         run: CI=false npm run build
 
       - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.SFTP_HOST }}
-          port: ${{ secrets.SFTP_PORT }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: "./build/*"
-          remote_path: ${{ secrets.SFTP_REMOTE_DIR }}
-          delete_remote_files: true
+          port: ${{ secrets.SFTP_PORT }}
+          protocol: sftp
+          local-dir: build
+          server-dir: ${{ secrets.SFTP_REMOTE_DIR }}
+          dangerous-clean-slate: true

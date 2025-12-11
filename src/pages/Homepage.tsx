@@ -38,7 +38,7 @@ export default function Homepage() {
   return (
     <>
       <SEO
-        title="Active Technologies - Hire Expert Software Engineers in Nigeria"
+        title="Active Technologies - Hire Expert Software Engineers Globally"
         description="Turn your idea into a thriving business with Active Technologies. We provide highly skilled software engineers, developers, designers, and project managers in Nigeria. Expert tech talent for all your development needs."
         keywords="software engineers Nigeria, hire developers, tech talent, outsource project, software development services, product management, design services"
         url="/"

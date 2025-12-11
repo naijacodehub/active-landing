@@ -121,7 +121,7 @@ export default function Footer() {
               <div className="space-y-4">
                 {addresses.map((addr, idx) => (
                   <div key={idx}>
-                    <p className="text-xs font-semibold text-primary mb-1">
+                    <p className="text-base font-semibold text-primary mb-1">
                       {addr.label}
                     </p>
                     <p className="text-gray-400 text-sm leading-relaxed">

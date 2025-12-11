@@ -33,7 +33,10 @@ export default function HeroSection() {
             </Link>
 
             <Link to={"/#testimonials"}>
-              <Button variant="link" className="text-base">
+              <Button
+                variant="outline"
+                className="h-12 !px-3 mobile:!px-7 text-base"
+              >
                 See Success Stories
               </Button>
             </Link>

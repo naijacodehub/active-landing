@@ -1,128 +1,123 @@
 # Active Landing
 
-This repository contains the frontend for the Active Landing marketing site — a React + TypeScript single-page application built with Create React App and Tailwind CSS.
+This repository contains the frontend for the Active Landing marketing site — a React + TypeScript single-page application built with Tailwind CSS.
 
-**Quick overview:**
-
-- Scaffold: Create React App (`react-scripts`)
-- Language: TypeScript
-- Styling: Tailwind CSS
-
-## Project status
-
-This project is a static marketing site with forms for hiring and outsourcing, team/member pages, and several reusable UI components.
-
-## Tech stack & key dependencies
-
-- React 18
-- TypeScript
+**Tech stack:**
+- React + TypeScript
 - Tailwind CSS
-- react-router-dom
-- react-hook-form + Zod for validations
-- Radix UI primitives for a11y-friendly UI
+- Vite / Create React App (project scaffold)
 
-Full dependency list is in `package.json`.
+## Features
+- Home / Marketing pages
+- Hire talent and Outsource project forms
+- Team members pages and components
+- Accessibility-minded components and smooth scrolling
 
-## Scripts (exact)
-
-These come from `package.json` in this repo:
-
-```bash
-npm start    # runs react-scripts start (development server)
-npm run build  # builds production bundle using react-scripts
-npm test     # runs tests (react-scripts test)
-npm run eject  # ejects CRA config (irreversible)
-```
-
-If you prefer a local preview of the build output you can run:
-
-```bash
-npx serve -s build
-# or install serve globally: npm install -g serve && serve -s build
-```
-
-## Getting started (local)
+## Getting started
 
 Prerequisites:
 
-- Node.js >= 18 recommended
-- npm (bundled with Node) or `yarn`
+- Node.js >= 18
+- npm or yarn
 
-Install deps:
+Install dependencies:
 
-```bash
-npm install
-```
+# Active Tech
 
-Run dev server:
+total 1236
+drwxr-xr-x   8 stephendev stephendev   4096 Dec  6 19:38 .
+drwxr-x---  12 stephendev stephendev   4096 Dec 11 13:58 ..
+drwxr-xr-x   8 stephendev stephendev   4096 Dec 11 13:58 .git
+drwxr-xr-x   3 stephendev stephendev   4096 Dec  6 17:03 .github
+-rw-r--r--   1 stephendev stephendev    310 Dec  4 16:51 .gitignore
+-rw-r--r--   1 stephendev stephendev     15 Dec  4 16:51 README.md
+drwxr-xr-x   4 stephendev stephendev   4096 Dec  6 10:49 build
+-rw-r--r--   1 stephendev stephendev    348 Dec  4 16:51 components.json
+-rw-------   1 stephendev stephendev    399 Dec  6 19:39 deploy_key
+-rw-r--r--   1 stephendev stephendev     95 Dec  6 19:39 deploy_key.pub
+-rw-r--r--   1 stephendev stephendev     59 Dec  4 16:51 index.css
+drwxr-xr-x 892 stephendev stephendev  36864 Dec  4 17:11 node_modules
+-rw-r--r--   1 stephendev stephendev 714452 Dec  4 17:11 package-lock.json
+-rw-r--r--   1 stephendev stephendev   1665 Dec  4 17:11 package.json
+drwxr-xr-x   3 stephendev stephendev   4096 Dec  4 16:51 public
+drwxr-xr-x  10 stephendev stephendev   4096 Dec  4 16:51 src
+-rw-r--r--   1 stephendev stephendev    958 Dec  4 16:51 tailwind.config.js
+-rw-r--r--   1 stephendev stephendev    535 Dec  4 16:51 tsconfig.json
+-rw-r--r--   1 stephendev stephendev 439678 Dec  4 17:11 yarn.lock
+[main d1b1542] adding readme file
+ 4 files changed, 138 insertions(+), 8 deletions(-)
 
-```bash
-npm start
-```
+[main cb533a4] fixing deployment
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-Run tests:
+[main dd6a480] fixing deployment with password
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-```bash
-npm test
-```
+[H[2J[3J[main cacba75] fixed deployment
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+[H[2J[3J
+up to date, audited 1448 packages in 48s
+
+260 packages are looking for funding
+  run `npm fund` for details
+
+36 vulnerabilities (6 low, 12 moderate, 17 high, 1 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Run development server:
+
+
+> landing-page@0.1.0 start
+> react-scripts start
 
 Build for production:
 
-```bash
-npm run build
-```
 
-Preview production build:
+> landing-page@0.1.0 build
+> react-scripts build
 
-```bash
-npx serve -s build
-```
+Creating an optimized production build...
 
-## Project structure
+Preview the production build locally:
 
-- `src/` — application source
-  - `components/` — shared UI components and form components
-  - `pages/` — route-level page components
-  - `constants/` — site constants and test data
-  - `forms/` — form containers for Hire/Outsource flows
-  - `layout/` — navbar, footer, layout helpers
-- `public/` — static assets and HTML template
-- `build/` — production build output (generated)
 
-## Environment variables
 
-Create React App supports `.env` files (prefixed with `REACT_APP_` for usage in the client). Example:
+If your  uses different script names (, , ), run the appropriate script shown in .
 
-```
-REACT_APP_API_URL=https://api.example.com
-```
+## Project structure (important files)
 
-## Linting / Formatting / CI
+-  — React source code
+-  — UI components and form components
+-  — Page containers
+-  and  — Static/public assets and built output
+-  — Tailwind configuration
 
-- This repository doesn't include configured lint or format scripts in `package.json`. Consider adding `eslint`, `prettier`, and related scripts if you need them.
+## Environment / Deployment
 
-## Deployment
+Static hosting is supported. For many hosts (Netlify, Vercel, Surge), you can point to the  output or configure the host to run 
+> landing-page@0.1.0 build
+> react-scripts build
 
-This is a static site after `npm run build`. You can deploy the `build/` output to any static host (Vercel, Netlify, GitHub Pages, S3+CloudFront, Surge).
-
-Example (Netlify):
-
-- Set the build command to `npm run build` and publish directory to `build`.
-
-Example (Vercel):
-
-- Import the repo and set the build command to `npm run build` (Vercel detects CRA automatically in many cases).
+Creating an optimized production build... and serve the produced static files.
 
 ## Contributing
 
 1. Fork the repo
 2. Create a feature branch
-3. Open a pull request with a clear description of changes
+3. Open a pull request with a clear description
 
-## Notes / Next actions I can do for you
+## Notes
 
-- Add exact `preview` script (`serve`) to `package.json`.
-- Add `lint` and `format` scripts and basic `.eslintrc` / `.prettierrc`.
-- Create a short `CONTRIBUTING.md` with PR checklist.
+- If you want, I can run a quick check of  to include exact npm scripts and tailor the README commands.
 
-If you want any of those, tell me which and I'll add them.
+---
+
+If you'd like a shorter or longer README, or one tailored for a specific host (Vercel, Netlify), tell me which and I will update it.

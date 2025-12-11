@@ -27,20 +27,20 @@ jobs:
       - name: Clean remote directory
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }} # 🔥 USE PASSWORD
-          port: ${{ secrets.SFTP_PORT }}
+          host: ${{ secrets.SFTP_HOST }} # 151.106.96.82
+          username: ${{ secrets.SFTP_USER }} # u688586274
+          password: ${{ secrets.SFTP_PASSWORD }} # your hostinger password
+          port: ${{ secrets.SFTP_PORT }} # 65002
           script: |
             rm -rf ${{ secrets.SFTP_REMOTE_DIR }}/*
             mkdir -p ${{ secrets.SFTP_REMOTE_DIR }}
 
-      - name: Upload build via SFTP
+      - name: Upload build files via SFTP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }} # 🔥 USE PASSWORD
-          port: ${{ secrets.SFTP_PORT }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: ${{ secrets.SFTP_PORT }} # MUST BE 65002
           source: "build/*"
           target: ${{ secrets.SFTP_REMOTE_DIR }}

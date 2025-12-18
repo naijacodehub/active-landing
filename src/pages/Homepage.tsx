@@ -7,6 +7,7 @@ import MeetOurTeamSection from "../components/homepage/MeetOurTeam";
 import Testimonials from "../components/homepage/Testimonials";
 import TrustedBySection from "../components/homepage/TrustedBy";
 import WhyChooseSection from "../components/homepage/WhyChoose";
+import YouTubeVideoSection from "../components/homepage/YouTubeVideo";
 import SEO from "../components/SEO";
 
 export default function Homepage() {
@@ -47,6 +48,11 @@ export default function Homepage() {
       />
       <HeroSection />
       <ExploreSection />
+      <YouTubeVideoSection
+        videoUrl="https://youtu.be/wylPIguUucQ?si=svNb_ahznxRWGYdg"
+        title="Watch Our Story"
+        description="Discover how we help businesses transform their ideas into thriving enterprises."
+      />
       <WhyChooseSection />
       <HiringMadeEasySection />
       <MeetOurTeamSection />

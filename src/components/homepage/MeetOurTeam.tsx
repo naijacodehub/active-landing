@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import Button from "../formComponents/Button";
 import MemberCard from "../MemberCard";
 import { membersList } from "../../constants/member";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
 
 export default function MeetOurTeamSection() {
   return (
@@ -21,17 +19,16 @@ export default function MeetOurTeamSection() {
         </p>
       </div>
 
-      <div className="mt-12 md:flex grid grid-cols-1  w-full items-center gap-8 md:gap-2 laptop:gap-4 max-w-[70rem] mx-auto">
-        <div className="flex xmd:grid xmd:grid-cols-3 gap-2 laptop:gap-4 flex-1 max-xmd:px-1">
+      <div className="mt-12 w-full max-w-[70rem] mx-auto overflow-x-hidden">
+        <div className="flex xmd:grid xmd:grid-cols-3 gap-2 laptop:gap-4 max-xmd:px-1">
           {membersList.slice(0, 6).map((member, idx) => {
             return <MemberCard member={member} key={idx} />;
           })}
-
-          <div className="flex xmd:grid xmd:grid-cols-3 gap-2 laptop:gap-4 flex-1 max-xmd:px-1">
-            <Link to={"/members"}>
-              <Button className="mt-4 font-bold">See more</Button>
-            </Link>
-          </div>
+        </div>
+        <div className="flex justify-center xmd:justify-start mt-4 max-xmd:px-1">
+          <Link to={"/members"}>
+            <Button className="font-bold">See more</Button>
+          </Link>
         </div>
       </div>
     </div>

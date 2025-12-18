@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 export default function MemberCard({ member }: { member?: MemberProps }) {
   return (
     <div className="rounded-2xl w-full max-xmd:min-w-[13rem] bg-grey dark:bg-secondary/10 px-3 py-4 h-full xmd:h-fit">
-      <div className="h-fit w-fit mx-auto rounded-xl my-7 rotate-45 flex justify-center">
+      <div className="h-fit w-fit mx-auto my-7 flex justify-center">
         <img
           src={`/Images/members/${member?.imageUrl || "profile.png"}`}
           alt={`${member?.name} in Active Tech`}
-          className="h-24 md:h-[9.5rem] xlaptop:h-[12rem] w-24 md:w-[9.5rem] xlaptop:w-[12rem] object-cover -rotate-45"
+          className="w-24 md:w-[9.5rem] xlaptop:w-[12rem] aspect-square object-cover rounded-lg"
         />
       </div>
 

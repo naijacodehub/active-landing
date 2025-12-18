@@ -4,41 +4,43 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-base
+  @apply bg-base;
 }
 
-body, html, #root{
+body,
+html,
+#root {
   height: 100%;
+  overflow-x: hidden;
 }
 
-
-.general-width{
-@apply max-w-[90rem] mx-auto
+.general-width {
+  @apply max-w-[90rem] mx-auto;
 }
 
-.general-padding{
-  @apply xlaptop:px-10 md:px-7 xxmobile:px-5 px-3
+.general-padding {
+  @apply xlaptop:px-10 md:px-7 xxmobile:px-5 px-3;
 }
 
-.bg-base{
-  @apply bg-white dark:bg-dark dark:text-white
+.bg-base {
+  @apply bg-white dark:bg-dark dark:text-white;
 }
 
-.section-heading{
-  @apply xxmd:text-3xl text-2xl font-bold mb-3
+.section-heading {
+  @apply xxmd:text-3xl text-2xl font-bold mb-3;
 }
 
-.card-heading{
-  @apply xmd:text-xl text-lg font-bold
+.card-heading {
+  @apply xmd:text-xl text-lg font-bold;
 }
 
-.bg-pale-sky{
-  @apply dark:bg-secondary/10
+.bg-pale-sky {
+  @apply dark:bg-secondary/10;
 }
 
 .three-line-text-truncate {
@@ -62,7 +64,8 @@ body, html, #root{
 }
 
 @keyframes slide {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(-100%);
   }
   33% {
@@ -72,4 +75,3 @@ body, html, #root{
     transform: translateX(100%);
   }
 }
-

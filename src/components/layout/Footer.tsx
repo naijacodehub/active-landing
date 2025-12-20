@@ -44,7 +44,7 @@ const socialLinks = [
   {
     label: "Instagram",
     icon: FaInstagramSquare,
-    to: "https://instagram.com/activetechnologies",
+    to: "https://www.instagram.com/activetechconsult/",
   },
 ];
 

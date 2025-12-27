@@ -22,9 +22,9 @@ export default function useHireTalent() {
       !serviceId ||
       !templateId ||
       !publicKey ||
-      serviceId === "service_6ysezz3" ||
-      templateId === "template_nx7qdy9" ||
-      publicKey === "KpvImFqFHX2bAaQDk"
+      serviceId === "YOUR_SERVICE_ID_HERE" ||
+      templateId === "YOUR_TEMPLATE_ID_HERE" ||
+      publicKey === "YOUR_PUBLIC_KEY_HERE"
     ) {
       setError(
         "EmailJS is not configured. Please update the EmailJS credentials in src/config/emailjs.config.ts"

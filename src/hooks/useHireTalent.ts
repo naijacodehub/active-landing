@@ -1,13 +1,14 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { emailjsConfig } from "../config/emailjs.config";
+import { HireTalentFormData } from "../constants/validators/HireTalent.validator";
 
-export default function useHireTalent(formData: any) {
+export default function useHireTalent() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const submitHireTalent = async () => {
+  const submitHireTalent = async (formData: HireTalentFormData) => {
     setLoading(true);
     setError(null);
     setSuccess(false);

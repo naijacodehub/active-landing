@@ -26,8 +26,6 @@ export default function HireTalentForm() {
     defaultValues: defaultHireTalentForm,
   });
 
-  const { submitHireTalent, loading, error, success } = useHireTalent(form.watch());
-
   const [selectedTechStacks, setSelectedTechStacks] = useState<Set<string>>(
     new Set()
   );
@@ -41,6 +39,8 @@ export default function HireTalentForm() {
     form.setValue("role", Array.from(selectedRoles));
   }, [selectedRoles, form]);
 
+  const { submitHireTalent, loading, error, success } = useHireTalent();
+
   // Reset form when submission is successful
   useEffect(() => {
     if (success) {
@@ -50,14 +50,22 @@ export default function HireTalentForm() {
     }
   }, [success, form]);
 
-  const onSubmit = async () => {
-    await submitHireTalent();
+  const onSubmit = async (data: HireTalentFormData) => {
+    try {
+      await submitHireTalent(data);
+    } catch (error) {
+      console.error("Form submission error:", error);
+    }
+  };
+
+  const onError = (errors: any) => {
+    console.error("Form validation errors:", errors);
   };
 
   return (
     <div className="max-w-[43rem] mx-auto">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit, onError)} className="space-y-8">
           {error && (
             <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-md">
               {error}
